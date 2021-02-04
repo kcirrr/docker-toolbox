@@ -6,7 +6,7 @@ metadata:
     app: toolbox
 spec:
   containers:
-  - image: ghcr.io/kcirrr/toolbox:latest
+  - image: kcir/toolbox:latest
     command:
       - "sleep"
       - "86400"
