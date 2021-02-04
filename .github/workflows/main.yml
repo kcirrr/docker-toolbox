@@ -67,9 +67,9 @@ jobs:
       - 
         name: Build and push image
         run: |
-          docker buildx build \
+          docker buildx build . \
             --platform $BUILD_ARCHS \
             --progress plain \
             --pull \
             --push \
-            --tag "${{ github.repository }}:latest" .
+            --tag "${{ github.repository }}:latest"
