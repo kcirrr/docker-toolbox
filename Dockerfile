@@ -20,4 +20,5 @@ RUN apt-get update \
     dnsutils \
     mysql-client \
     postgresql-client \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    c_rehash
