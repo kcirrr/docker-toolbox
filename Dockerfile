@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
-RUN DEBIAN_FRONTEND="noninteractive" apt-get update \
-    && apt-get install -y \
+RUN apt-get update \
+    && DEBIAN_FRONTEND="noninteractive" apt-get install -y \
     curl \
     wget \
     lsof \
