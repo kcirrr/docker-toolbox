@@ -15,6 +15,7 @@ on:
 
 env:
   IMAGE_NAME: toolbox
+  BUILD_ARCHS: "linux/arm/v7,linux/arm64,linux/amd64"
 
 jobs:
   test:
@@ -57,14 +58,14 @@ jobs:
         name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
-
-      - name: Build image
-        run: docker build . --file Dockerfile --tag $IMAGE_NAME
-
-      - name: Log into registry
+      - 
+        name: Build image
+        run: docker build . --file Dockerfile --tag $IMAGE_NAME --platform $BUILD_ARCHS --progress plain --pull --push
+      - 
+        name: Log into registry
         run: echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
-      - name: Push image
+      - 
+        name: Push image
         run: |
           IMAGE_ID=ghcr.io/${{ github.repository }}/$IMAGE_NAME
           # Change all uppercase to lowercase
