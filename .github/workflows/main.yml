@@ -13,6 +13,10 @@ on:
   # Run tests for any PRs.
   pull_request:
 
+env:
+  IMAGE_NAME: toolbox
+  BUILD_ARCHS: "linux/arm/v7,linux/arm64,linux/amd64"
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -67,9 +71,20 @@ jobs:
       - 
         name: Build and push image
         run: |
+          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+          # Change all uppercase to lowercase
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # Use Docker `latest` tag convention
+          [ "$VERSION" == "main" ] && VERSION=latest
+          echo IMAGE_ID=$IMAGE_ID
+          echo VERSION=$VERSION
           docker buildx build \
             --platform $BUILD_ARCHS \
             --progress plain \
             --pull \
             --push \
-            --tag "kcirrr/toolbox:latest" .
+            --tag "${{ github.repository_owner }}/$IMAGE_NAME:$VERSION" .
