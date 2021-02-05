@@ -9,16 +9,15 @@ RUN apt-get update \
     whois \
     vim \
     info \
-    man-db \
     rsync \
     rclone \
     zip \
     unzip \
-    manpages \
     net-tools \
     mtr-tiny \
     dnsutils \
     mysql-client \
     postgresql-client \
+    redis-tools \
     && rm -rf /var/lib/apt/lists/* \
     c_rehash
