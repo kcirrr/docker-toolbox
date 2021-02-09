@@ -16,15 +16,9 @@ env:
 
 jobs:
   lint:
-    name: runner / hadolint
     runs-on: ubuntu-latest
     steps:
-      - name: Check out code
-        uses: actions/checkout@v1
-      - name: hadolint
-        uses: reviewdog/action-hadolint@v1
-        with:
-          hadolint_ignore: DL3007 DL3008
+      - uses: brpaz/hadolint-action@v1.2.1
 
   test:
     needs: lint
