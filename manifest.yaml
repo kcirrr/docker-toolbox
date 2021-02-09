@@ -8,10 +8,7 @@ metadata:
 spec:
   containers:
   - image: kcir/toolbox:latest
+    name: toolbox
     command:
       - "sleep"
       - "86400"
-    imagePullPolicy: IfNotPresent
-    name: toolbox
-  restartPolicy: Always
-
