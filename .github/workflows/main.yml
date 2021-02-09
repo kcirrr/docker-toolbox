@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'Dockerfile'
-      - '.github/workflows/**'
+      - '.github/workflows/main.yml'
 
   pull_request:
 
