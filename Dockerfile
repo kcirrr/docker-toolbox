@@ -13,6 +13,8 @@ RUN apt-get update \
     rclone \
     zip \
     unzip \
+    telnet \
+    nmap \
     net-tools \
     mtr-tiny \
     dnsutils \
