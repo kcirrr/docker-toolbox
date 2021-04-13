@@ -15,7 +15,17 @@ env:
   BUILD_ARCHS: "linux/arm/v7,linux/arm64,linux/amd64"
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        uses: brpaz/hadolint-action@v1.2.1
+        with:
+          dockerfile: Dockerfile
+
   test:
+    needs: lint
+
     runs-on: ubuntu-latest
     steps:
       -
