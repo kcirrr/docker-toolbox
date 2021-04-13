@@ -20,8 +20,6 @@ jobs:
     steps:
       - 
         uses: brpaz/hadolint-action@v1.2.1
-        with:
-          dockerfile: Dockerfile
 
   test:
     needs: lint
