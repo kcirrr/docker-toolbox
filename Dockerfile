@@ -21,5 +21,6 @@ RUN apt-get update \
     mysql-client \
     postgresql-client \
     redis-tools \
+    iputils-ping \
     && rm -rf /var/lib/apt/lists/* \
     c_rehash
