@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: toolbox
+  labels:
+    app: toolbox
+spec:
+  selector:
+    matchLabels:
+      name: toolbox
+  template:
+    metadata:
+      labels:
+        name: toolbox
+    spec:
+      containers:
+      - image: ghcr.io/kcirrr/toolbox:latest
+        name: toolbox
+        command:
+        - "sleep"
+        - "86400"
+      terminationGracePeriodSeconds: 30
