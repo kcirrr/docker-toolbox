@@ -4,6 +4,7 @@ on:
     branches:
       - main
     paths:
+      - '.yamllint.yml'
       - 'pod.yaml'
       - 'daemonset.yaml'
 jobs:
