@@ -3,19 +3,36 @@
 Docker image with some tools for troubleshooting.
 
 ## Usage
-### Create pod
+### Pod
+#### Create pod
 ```
-kubectl apply -f https://raw.githubusercontent.com/kcirrr/toolbox/main/manifest.yaml
+kubectl apply -f https://raw.githubusercontent.com/kcirrr/toolbox/main/pod.yaml
 ```
 
-### Log into pod
+#### Log into pod
 ```
 kubectl exec -i -t pod/toolbox -- bash
 ```
 
-### Delete pod
+#### Delete pod
 ```
 kubectl delete pod/toolbox
+```
+
+### DaemonSet
+#### Create DaemonSet
+```
+kubectl apply -f https://raw.githubusercontent.com/kcirrr/toolbox/main/daemonset.yaml
+```
+
+#### Create commands to log in to pods in DaemonSet
+```
+awk '{ print "kubectl exec -i -t pod/" $1 " -- bash" }' <(kubectl get pods --selector name=toolbox -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}')
+```
+
+#### Delete DaemonSet
+```
+kubectl delete ds/toolbox
 ```
 
 ## Included tools
