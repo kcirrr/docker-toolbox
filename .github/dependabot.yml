@@ -3,7 +3,5 @@ version: 2
 updates:
   - package-ecosystem: "docker"
     directory: "/"
-    registries:
-      - dockerhub
     schedule:
       interval: "daily"
