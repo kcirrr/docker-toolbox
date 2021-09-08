@@ -9,8 +9,6 @@ on:
       - 'Dockerfile'
       - '.github/workflows/main.yml'
 
-  pull_request:
-
 env:
   IMAGE_NAME: toolbox
   BUILD_ARCHS: "linux/arm/v7,linux/arm64,linux/amd64"
