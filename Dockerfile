@@ -23,5 +23,6 @@ RUN apt-get update \
     postgresql-client \
     redis-tools \
     iputils-ping \
+    strace \
     && rm -rf /var/lib/apt/lists/* \
     c_rehash
