@@ -19,6 +19,9 @@ RUN apt-get update \
     net-tools \
     mtr-tiny \
     dnsutils \
+    openssh-client \
+    openssl \
+    ca-certificates \
     mysql-client \
     postgresql-client \
     redis-tools \
