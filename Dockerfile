@@ -20,6 +20,7 @@ RUN apt-get update \
     mtr-tiny \
     dnsutils \
     openssh-client \
+    openssh-server \
     openssl \
     ca-certificates \
     mysql-client \
