@@ -1,4 +1,4 @@
-FROM ubuntu:focal-20211006
+FROM ubuntu:focal-20220105
 
 RUN apt-get update \
     && apt-get upgrade -y \
