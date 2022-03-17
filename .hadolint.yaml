@@ -1,4 +1,2 @@
 ignored:
-  - DL3005 # GitHub runners are using an old Hadolint version complaining about apt-get upgrade
-  - DL3007
-  - DL3008
+  - DL3018
