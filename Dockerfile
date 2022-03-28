@@ -1,7 +1,6 @@
 FROM alpine:3.15.2
 
-RUN apk add --no-cache --upgrade libretls \
-  && apk add --no-cache \
+RUN apk add --no-cache \
   apache2-utils \
   bash \
   bash-completion \
