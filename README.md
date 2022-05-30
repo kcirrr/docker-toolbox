@@ -5,7 +5,7 @@ Docker image with some tools for troubleshooting.
 ## Usage
 ### Run
 ```
-kubectl run toolbox --rm -i --tty --image ghcr.io/kcirrr/toolbox:latest -- /bin/bash
+kubectl run toolbox --rm -i --tty --image ghcr.io/kcirrr/docker-toolbox:latest -- /bin/bash
 ```
 
 ### Pod
