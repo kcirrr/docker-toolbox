@@ -1,0 +1,16 @@
+{
+    "packageRules": [
+      {
+        "matchPackagePatterns": [
+          "*"
+        ],
+        "matchUpdateTypes": [
+          "minor",
+          "patch"
+        ],
+        "automerge": true,
+        "groupName": "all non-major dependencies",
+        "groupSlug": "all-minor-patch"
+      }
+    ]
+}
