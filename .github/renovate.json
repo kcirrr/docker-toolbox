@@ -10,4 +10,6 @@
         "groupName": "all dependencies",
         "groupSlug": "all-dependencies"
       }
+    ],
+    "bumpVersion": "patch"
 }
